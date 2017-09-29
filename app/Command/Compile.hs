@@ -4,7 +4,12 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE TupleSections #-}
 
-module Command.Compile (command) where
+module Command.Compile (command, 
+                        readInput, 
+                        PSCMakeOptions(..), 
+                        pscMakeOptions,
+                        globWarningOnMisses,
+                        warnFileTypeNotFound) where
 
 import           Control.Applicative
 import           Control.Monad

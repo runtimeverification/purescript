@@ -14,6 +14,7 @@ import qualified Command.Hierarchy as Hierarchy
 import qualified Command.Ide as Ide
 import qualified Command.Publish as Publish
 import qualified Command.REPL as REPL
+import qualified Command.PrintAst as PrintAst
 import           Data.Foldable (fold)
 import           Data.Monoid ((<>))
 import qualified Options.Applicative as Opts
@@ -68,4 +69,7 @@ main = do
         , Opts.command "repl"
             (Opts.info REPL.command
               (Opts.progDesc "Enter the interactive mode (PSCi)"))
+        , Opts.command "ast"
+            (Opts.info PrintAst.command
+              (Opts.progDesc "Parses a PureScript file and returns AST"))
         ]
